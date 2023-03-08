@@ -1,0 +1,35 @@
+#  Kivy file references
+#: include libs/kvs/home_screen.kv
+#: include libs/kvs/number_generator_screen.kv
+#: include libs/kvs/navigation_drawer.kv
+
+<MyScreenManager>:
+
+    MDScreen:
+
+        MDBoxLayout:
+            orientation: 'vertical'
+
+            MDTopAppBar:
+                id: top_bar_title
+                title: "Navigation Drawer"
+                elevation: 5
+                left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
+
+            Widget:
+    
+    HomeScreen:
+
+    NumberGeneratorScreen:
+
+MDScreen:
+
+    MDNavigationLayout:
+
+        MyScreenManager:
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            ContentNavigationDrawer:
+                id: content_drawer

@@ -1,12 +1,16 @@
-import kivy
-from kivy.app import App
+from kivymd.app import MDApp
+from kivy.lang import Builder
+from kivy.uix.screenmanager import ScreenManager
 
-from number_generator import NumberGenerator
+class MyScreenManager(ScreenManager):
+    pass
 
-class TrainingApp(App):
-    
+class TrainingApp(MDApp):
+
     def build(self):
-        return NumberGenerator()
+        self.screen_manager = MyScreenManager()
+        return Builder.load_file("main.kv")
     
-training_app = TrainingApp()
-training_app.run()
+if __name__ == "__main__":
+    training_app = TrainingApp()
+    training_app.run()

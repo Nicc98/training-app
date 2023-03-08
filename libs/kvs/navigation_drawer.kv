@@ -1,0 +1,38 @@
+#: import ContentNavigationDrawer libs.baseclass.navigation_drawer.ContentNavigationDrawer
+#: import OptionItem libs.baseclass.navigation_drawer.OptionItem
+#: import OptionList libs.baseclass.navigation_drawer.OptionList
+
+<OptionItem>:
+    theme_text_color: "Custom"
+    on_release: self.parent.set_color_item(self)
+    on_release: app.screen_manager.current = self.text
+
+    IconLeftWidget:
+        id: icon
+        icon: root.icon
+        theme_text_color: "Custom"
+        text_color: root.text_color
+
+<ContentNavigationDrawer>:
+    id: nav_drawer
+    orientation: "vertical"
+    padding: "8dp"
+    spacing: "8dp"
+
+    MDLabel:
+        text: "Training App"
+        font_style: "Button"
+        adaptive_height: True
+
+    ScrollView:
+
+        OptionList:
+
+            OptionItem:
+                icon: "home"
+                text: "Home"
+
+            OptionItem:
+                icon: "folder"
+                text: "Number Generator"
+

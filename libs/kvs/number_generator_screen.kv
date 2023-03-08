@@ -1,0 +1,25 @@
+#: import NumberGeneratorScreen libs.baseclass.number_generator_screen.NumberGeneratorScreen
+
+<NumberGeneratorScreen>:
+    name: "Number Generator"
+
+    GridLayout:
+        cols: 1
+        rows: 1
+        random_number_label: random_number_label
+
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: "Number Generator"
+                font_size: 64
+                color: "#b30406"
+            Label:
+                id: random_number_label
+                text: "-"
+                font_size: 64
+            Button:
+                text: "Generate"
+                font_size: 32
+                size: 100, 50
+                on_press: root.generate_number()
