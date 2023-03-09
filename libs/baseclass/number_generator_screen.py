@@ -1,10 +1,9 @@
-from kivy.uix.screenmanager import Screen
+from kivymd.uix.screen import MDScreen
+from kivy.properties import ObjectProperty
 import random
 
-class NumberGeneratorScreen(Screen):
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+class NumberGeneratorScreen(MDScreen):
+    number_generator_screen = ObjectProperty()
     
     def generate_number(self):
         self.random_number_label.text = str(random.randint(0, 10))

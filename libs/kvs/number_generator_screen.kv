@@ -2,24 +2,28 @@
 
 <NumberGeneratorScreen>:
     name: "Number Generator"
+    number_generator_screen: number_generator_screen
+    random_number_label: random_number_label
 
-    GridLayout:
-        cols: 1
-        rows: 1
-        random_number_label: random_number_label
+    BoxLayout:
+        id: number_generator_screen
+        orientation: 'vertical'
 
-        BoxLayout:
-            orientation: 'vertical'
-            Label:
-                text: "Number Generator"
-                font_size: 64
-                color: "#b30406"
-            Label:
-                id: random_number_label
-                text: "-"
-                font_size: 64
-            Button:
-                text: "Generate"
-                font_size: 32
-                size: 100, 50
-                on_press: root.generate_number()
+        Label:
+            text: "Number Generator"
+            font_size: 64
+            color: app.theme_manager.primary_color
+            halign: 'center'
+        Label:
+            id: random_number_label
+            text: "-"
+            color: app.theme_manager.accent_color
+            font_size: 64
+            halign: 'center'
+        Button:
+            text: "Generate"
+            font_size: 32
+            text_color: app.theme_manager.accent_color
+            halign: 'center'
+            on_press: root.generate_number()
+            

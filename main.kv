@@ -1,35 +1,36 @@
+#: import AppLayout libs.baseclass.app_layout.AppLayout
+#: import ScreenManager libs.baseclass.app_layout.ScreenManager
+
 #  Kivy file references
 #: include libs/kvs/home_screen.kv
 #: include libs/kvs/number_generator_screen.kv
 #: include libs/kvs/navigation_drawer.kv
+        
 
-<MyScreenManager>:
+<AppLayout>:
+    nav_drawer: nav_drawer
+    screen_manager: screen_manager
 
-    MDScreen:
+    MDBoxLayout:
+        orientation: 'vertical'
 
-        MDBoxLayout:
-            orientation: 'vertical'
+        MDTopAppBar:
+            id: toolbar
+            title: "Training App"
+            elevation: 6
+            left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
 
-            MDTopAppBar:
-                id: top_bar_title
-                title: "Navigation Drawer"
-                elevation: 5
-                left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
+        MDNavigationLayout:
 
-            Widget:
-    
-    HomeScreen:
+            ScreenManager:
+                id: screen_manager
 
-    NumberGeneratorScreen:
+                HomeScreen:
+                NumberGeneratorScreen:
 
-MDScreen:
+            MDNavigationDrawer:
+                id: nav_drawer
 
-    MDNavigationLayout:
+                OptionsNavigationDrawer:
 
-        MyScreenManager:
-
-        MDNavigationDrawer:
-            id: nav_drawer
-
-            ContentNavigationDrawer:
-                id: content_drawer
+AppLayout:
