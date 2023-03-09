@@ -2,12 +2,15 @@
 
 <HomeScreen>:
     name: "Home"
-    home_screen: home_screen
+    welcome_label: welcome_label
 
     BoxLayout:
-        id: home_screen
         orientation: 'vertical'
+        padding: "10dp"
+        spacing: "10dp"
 
         MDLabel:
-            text: "Ayo Brr"
+            id: welcome_label
+            text: "Bing Chilling"
+            font_size: 64
             halign: "center"

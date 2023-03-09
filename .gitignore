@@ -18,3 +18,5 @@ __pycache__
 # Ignore all local history of files
 .history
 .ionide
+
+test.py

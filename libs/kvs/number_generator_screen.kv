@@ -2,12 +2,12 @@
 
 <NumberGeneratorScreen>:
     name: "Number Generator"
-    number_generator_screen: number_generator_screen
     random_number_label: random_number_label
 
     BoxLayout:
-        id: number_generator_screen
         orientation: 'vertical'
+        padding: "10dp"
+        spacing: "10dp"
 
         Label:
             text: "Number Generator"
@@ -23,7 +23,7 @@
         Button:
             text: "Generate"
             font_size: 32
-            text_color: app.theme_manager.accent_color
+            # color: app.theme_manager.accent_color
             halign: 'center'
             on_press: root.generate_number()
             

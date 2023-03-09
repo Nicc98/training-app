@@ -1,15 +1,14 @@
 #: import AppLayout libs.baseclass.app_layout.AppLayout
-#: import ScreenManager libs.baseclass.app_layout.ScreenManager
 
 #  Kivy file references
 #: include libs/kvs/home_screen.kv
 #: include libs/kvs/number_generator_screen.kv
 #: include libs/kvs/navigation_drawer.kv
         
-
 <AppLayout>:
-    nav_drawer: nav_drawer
     screen_manager: screen_manager
+    nav_drawer: nav_drawer
+    toolbar: toolbar
 
     MDBoxLayout:
         orientation: 'vertical'
