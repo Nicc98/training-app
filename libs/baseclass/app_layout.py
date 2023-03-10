@@ -1,9 +1,7 @@
 from kivy.properties import ObjectProperty
 from kivymd.uix.screen import MDScreen
-# from kivy.uix.screenmanager import ScreenManager
 
 class AppLayout(MDScreen):
-    # screen_manager = ScreenManager()
     screen_manager = ObjectProperty()
     nav_drawer = ObjectProperty()
     toolbar = ObjectProperty()

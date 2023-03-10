@@ -1,0 +1,46 @@
+#: import SlotMachineScreen libs.baseclass.slot_machine_screen.SlotMachineScreen
+
+<SlotMachineScreen>:
+    name: "Number Generator"
+    # first_simbol_label: first_simbol_label
+    # second_simbol_label: second_simbol_label
+    # third_simbol_label: third_simbol_label
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: "10dp"
+        spacing: "10dp"
+
+        MDLabel:
+            text: "Number Generator"
+            font_size: 64
+            color: app.theme_manager.primary_color
+            halign: 'center'
+        MDBoxLayout:
+            padding: "10dp"
+            spacing: "5dp"
+            MDLabel:
+                id: first_simbol_label
+                text: "-"
+                color: app.theme_manager.accent_color
+                font_size: 64
+                halign: 'center'
+            MDLabel:
+                id: second_simbol_label
+                text: "-"
+                color: app.theme_manager.accent_color
+                font_size: 64
+                halign: 'center'
+            MDLabel:
+                id: third_simbol_label
+                text: "-"
+                color: app.theme_manager.accent_color
+                font_size: 64
+                halign: 'center'
+        Button:
+            text: "SPIN"
+            font_size: 64
+            color: app.theme_manager.primary_color
+            halign: 'center'
+            on_press: root.generate_number()
+            
