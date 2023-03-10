@@ -1,4 +1,4 @@
-#: import HomeScreen libs.baseclass.home_screen.HomeScreen
+#: import HomeScreen libs.baseclass.screens.home_screen.HomeScreen
 
 <HomeScreen>:
     name: "Home"
@@ -9,8 +9,25 @@
         padding: "10dp"
         spacing: "10dp"
 
+        canvas.before:
+            Color:
+                rgba: (0, 0, 1, 0.2)
+
+            Rectangle:
+                pos: self.pos
+                size: root.size
+
         MDLabel:
             id: welcome_label
             text: "Bing Chilling"
+            bold: True
             font_size: 64
-            halign: "center"
+            halign: 'center'
+            valign: 'center'
+
+        Image:
+            id: home_gif
+            source: 'assets/images/mario_gang.gif'
+            size: 295, 292
+            allow_stretch: True
+

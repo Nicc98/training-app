@@ -4,7 +4,7 @@ from kivymd.theming import ThemableBehavior
 from kivymd.uix.list import OneLineIconListItem
 
 class OptionsNavigationDrawer(MDBoxLayout):
-    options_navigation_drawer = ObjectProperty()        
+    pass
 
 class OptionsItem(OneLineIconListItem, ThemableBehavior):
     icon = StringProperty()

@@ -6,17 +6,15 @@
 #: include libs/kvs/navigation_drawer.kv
         
 <AppLayout>:
-    screen_manager: screen_manager
-    nav_drawer: nav_drawer
-    toolbar: toolbar
 
     MDBoxLayout:
         orientation: 'vertical'
 
         MDTopAppBar:
             id: toolbar
-            title: "Training App"
-            elevation: 6
+            title: home_screen.name
+            adaptive_height: True
+            elevation: 5
             left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
 
         MDNavigationLayout:
@@ -25,7 +23,9 @@
                 id: screen_manager
 
                 HomeScreen:
+                    id: home_screen
                 SlotMachineScreen:
+                    id: slot_machine_screen
 
             MDNavigationDrawer:
                 id: nav_drawer

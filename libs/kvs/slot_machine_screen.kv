@@ -1,46 +1,67 @@
-#: import SlotMachineScreen libs.baseclass.slot_machine_screen.SlotMachineScreen
+#: import SlotMachineScreen libs.baseclass.screens.slot_machine_screen.SlotMachineScreen
 
 <SlotMachineScreen>:
-    name: "Number Generator"
-    # first_simbol_label: first_simbol_label
-    # second_simbol_label: second_simbol_label
-    # third_simbol_label: third_simbol_label
+    name: "Slot Machine"
 
     MDBoxLayout:
         orientation: 'vertical'
         padding: "10dp"
         spacing: "10dp"
+        position_hint: {'center_x':0.5, 'center_y':0.5}
 
-        MDLabel:
-            text: "Number Generator"
-            font_size: 64
-            color: app.theme_manager.primary_color
-            halign: 'center'
+        canvas.before:
+            Color:
+                rgba: (0, 1, 0, 0.5)
+
+            Rectangle:
+                pos: self.pos
+                size: root.size
+                source: 'assets/images/jungle_bg.jpg'
+
+        Image:
+            id: spin_gif
+            source: 'assets/images/gorilla-gamgam.gif'
+            size: 300, 300
+            anim_delay: -1
+            anim_loop: 1
+            allow_stretch: True
+        
         MDBoxLayout:
             padding: "10dp"
             spacing: "5dp"
+
+            # TODO: Need to make class for spin label
             MDLabel:
                 id: first_simbol_label
                 text: "-"
-                color: app.theme_manager.accent_color
-                font_size: 64
+                color: "##ffffff"
+                font_size: 128
+                bold: True
                 halign: 'center'
+            
             MDLabel:
                 id: second_simbol_label
                 text: "-"
-                color: app.theme_manager.accent_color
-                font_size: 64
+                color: "##ffffff"
+                font_size: 128
+                bold: True
                 halign: 'center'
+            
             MDLabel:
                 id: third_simbol_label
                 text: "-"
-                color: app.theme_manager.accent_color
-                font_size: 64
+                color: "##ffffff"
+                font_size: 128
+                bold: True
                 halign: 'center'
-        Button:
-            text: "SPIN"
-            font_size: 64
-            color: app.theme_manager.primary_color
-            halign: 'center'
-            on_press: root.generate_number()
-            
+
+        AnchorLayout:
+
+            MDRoundFlatButton:
+                id: spin_btn
+                text: "SPIN"
+                font_size: 128
+                text_color: "##ffffff"
+                on_press: root.spin()
+                on_press: spin_gif.anim_delay = 0.05
+                on_press: spin_gif._coreimage.anim_reset(True)
